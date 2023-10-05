@@ -1,0 +1,137 @@
+/* 1. Git & GitHub
+The project should be on GitHub, with public access enabled for potential employers to be able to clone and check its code. 
+And it should demonstrate appropriate usage of Git VCS, with a main branch, commits for individual page sections, 
+and commit messages written appropriately.
+
+Note A: Having your project on GitHub is independent of whether or not you have it hosted online on a web server. 
+Having it on GitHub is for employers to be able to check your code and project structure, 
+while having it hosted on a web server is so that they can see the project live / functioning as it would normally be.  */
+
+2. Project Setup
+The project files should demonstrate an appropriate structure and organization, including proper file and directory naming conventions. 
+This includes having the index.html file in the root of your project directory.
+
+3. README File
+The project should have a README.md file at the root directory which potential employers can easily access and read on GitHub, 
+and which clearly and concisely describes what the project is about (what you built and what you are showcasing with that project), 
+as well as any other relevant information such as navigation/usage instruction and authors if applicable.
+
+4. Semantic HTML5
+Your project should demonstrate proper use of HTML5 with semantic markup preferred over presentational, 
+proper element/tag placement and structure, proper indentation, adequate use of tag attributes, etc.
+
+5. CSS Styling Basics
+Your project should demonstrate good understanding and appropriate usage of CSS basics, including appropriate usage of external, 
+internal, and inline CSS (with external CSS being prioritized), appropriate usage of type, class, and id selectors 
+(including appropriate naming conventions), appropriate CSS declaration syntax (including indentation).
+
+Note B: Some of these CSS Styling conditions may not apply for this project due to the use of a CSS Library such as Bootstrap or Tailwind CSS.
+
+6. HTML Block Elements & CSS Box Model
+Your project should demonstrate understanding and appropriate usage of the HTML block, inline and block-inline elements, 
+together with the CSS Box Model.
+
+7. Responsive
+Your project should be fully responsive, adapting well to the four categories of screen sizes: Phone, Tablet, Desktop, and Wide Screen. 
+
+Note C: Whether your CSS code is mobile-first or desktop-first is up to you, but it is recommended that at least one project is mobile-first.
+
+8. ES6+ JavaScript
+Your project should demonstrate understanding and appropriate usage of ES6+ JavaScript, including appropriate usage of external, internal, 
+and inline JS (with external JS being prioritized), and appropriate variable and function naming and calling.
+
+9. Comments
+Your project should demonstrate understanding and appropriate usage of line commenting in all code files (HTML, CSS, and JS)
+
+10. W3C HTML Validation & ARIA Accessibility Validation
+The project should receive acceptable scores when presented to a W3C HTML validation, and to an Accessibility validation tool. 
+Make sure your project does not have any errors when presented to the validation tool.
+
+11. Dynamic Web App (Interactive)
+This project should be a dynamic web application built with ES6+ JavaScript without use of any frameworks.
+
+12. CSS Libraries: Bootstrap or Tailwind
+The project should demonstrate understanding and appropriate usage of CSS Libraries for styling elements. 
+You can choose between using Bootstrap 5 or Tailwind CSS (pick one). Either one is a good pick since they are the two most commonly used 
+and requested CSS libraries in jobs and gigs.
+
+13. DOM manipulation with vanilla / native JavaScript
+The project should demonstrate understanding and appropriate usage of pure JavaScript functions and methods for manipulating the DOM 
+and its elements without use of any libraries, frameworks, or tools.
+
+14. DOM manipulation with JavaScript Libraries: jQuery
+The project should also demonstrate understanding and appropriate usage of JavaScript Libraries. You will achieve this by using 
+the jQuery library to manipulate the DOM and its elements.
+
+Note D: You must add comments in your JavaScript code to indicate where you are using native JS to manipulate the DOM, 
+and where you are using a JavaScript Library (jQuery). This way employers will see you understand and can use both approaches.
+
+15. API calls with vanilla / native ES6+ JavaScript: Fetch API
+The project should demonstrate understanding and appropriate usage of native ES6+ JavaScript to make API calls to a server. 
+You must achieve this by using the modern Fetch API feature of JavaScript somewhere in your project.
+
+16. API calls with JavaScript Libraries: jQuery AJAX
+The project should also demonstrate understanding and appropriate usage of JavaScript Libraries to make API calls to a server. 
+You must achieve this by using jQuery AJAX somewhere in your project.
+
+Note E: You must add comments in your JavaScript code to indicate where you are using native JS to make API calls, 
+and where you are using a JavaScript Library (jQuery AJAX). This way employers will see you understand and can use both approaches.
+
+17. State Management with vanilla / native JavaScript
+The project should demonstrate understanding and appropriate usage of native ES6+ JavaScript to preserve 
+and update the state of data after the webpage or application is closed and re-opened. 
+You can achieve this by using localStorage, sessionStorage, or other means (without using any libraries, frameworks, or tools).
+
+Note F: Your state management doesn't need to be complex, you just need to prove that you can save the progress/state 
+of a web application upon closing it. If you use localStorage, you should be aware of the following: 
+a) it has a 5MB limit, 
+b) you can only store string data, so your arrays and objects need to be parsed, 
+c) it is inappropriate to store sensitive data such as login credentials in localStorage because it is not secure, and 
+d) localStorage is inaccessible in incognito/private browsing modes.
+
+18. Responsive
+The web app should be fully responsive, adapting well to the four categories of screen sizes: Phone, Tablet, Desktop, and Wide Screen. 
+
+19. Theme
+The theme of the website can be one of the following: 
+a) To-Do Checklist
+b) Quiz App
+c) Weather Dashboard
+d) Other (talk to the teacher first to ensure you don't pick something too complicated)
+
+Notes G:
+Many of the conditions and requirements for this portfolio piece are covered during Course 3 and 4 of the Web Development program. 
+However, it is strongly suggested that you come back to improve and polish this project during and after the rest of the courses in the program, 
+as you will learn more things that will help you improve the project further.
+
+RESTful Web APIs
+
+Here is a list of public APIs you could use in your project:
+JSONPlaceholder: Offers fake online REST API for testing and prototyping. Useful for demonstrating CRUD operations without setting up a backend.
+
+Dog API: A free API for random pictures of dogs.
+
+Cat API:  A free API for random pictures of cats.
+OpenWeatherApp: Provides current weather data, forecasts, nowcasts and historical weather data.
+
+JokeAPI: Programming and general jokes.
+REST Countries: Get information about countries, like name, population, area, and more.
+
+PokeAPI: All the Pokémon data you'll ever need in one place, easily accessible through a modern RESTful API.
+
+SpaceX API: Company, vehicle, launch, and event data.
+
+SWAPI: The Star Wars API.
+
+Firebase Realtime Database: Though Firebase offers a full suite of features, 
+its Realtime Database can be used as a simple noSQL cloud database to store and sync data in real-time.
+
+Airtable: Mix of spreadsheet and database. Offers a simple API to store and retrieve data.
+
+Eventbrite: For event listings and details.
+
+News API: A simple HTTP REST API for searching and retrieving live articles. It can help answer questions like 
+"What's happening right now in the world?".
+
+NASA API: A collection of various space-related APIs.
+There are more free/public APIs out there, these are just some examples to help get you started
