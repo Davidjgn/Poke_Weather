@@ -12,25 +12,10 @@
     <script src="https://kit.fontawesome.com/9e6a36f458.js" crossorigin="anonymous"></script>
 
     <title>index</title>
-    <script>
-        //hide and show city input
-        function CityInput(){
-            const city = document.getElementById("city");
-            if(city.style.display=="inline"){
-                document.getElementById("city").style.display = "none";
-                document.getElementById("city_BTN").style.display = "none";
-            }
-            else{
-                document.getElementById("city").style.display = "inline";
-                document.getElementById("city_BTN").style.display = "inline";
-            }
-        }
-        function FetchFunction(){
-            document.getElementById("city").style.display = "none";
-            document.getElementById("city_BTN").style.display = "none";
 
-            document.getElementById("location").innerHTML = document.getElementById("city").value;
-        }
+    <script src="./Api_Fetcher.js"></script>
+    <script>
+        
     </script>
 </head>
 
@@ -52,7 +37,7 @@
             </a>
             <br>
             <input type="text" class="city" id="city">
-            <button class="city_BTN" id="city_BTN" onclick="FetchFunction()">
+            <button class="city_BTN" id="city_BTN" onclick="FetchFunction(), fetchWeather(), fetchForecast()">
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
             <br>
@@ -68,10 +53,14 @@
             <div class="flex_container">
                 <div class="box">
                     <div class="d-inline" id="temperature">
-                        14°C
+                        0°C
                     </div>
                     <div class="d-inline">
-                        <i class="fa-regular fa-sun"></i>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" id="icon">
+                        
+                        <span id="main_description">
+                            
+                        </span>
                     </div>
                 </div>
                 <div class="box">
@@ -83,34 +72,34 @@
                                         High
                                     </strong>
                                 </td>
-                                <td> <!--High temp for the day-->
-                                    17°C
+                                <td id="high"> <!--High temp for the day-->
+                                    0°C
                                 </td>
                                 <td>
                                     <strong>
                                         Low
                                     </strong>
                                 </td>
-                                <td> <!--Low temp for the day-->
-                                    8°C
+                                <td id="low"> <!--Low temp for the day-->
+                                    0°C
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <strong>
-                                        POP
+                                        Feels Like
                                     </strong>
                                 </td>
-                                <td>
-                                    0%
+                                <td id="feel">
+                                    0°C
                                 </td>
                                 <td>
                                     <strong>
                                         Humidity
                                     </strong>
                                 </td>
-                                <td>
-                                    73%
+                                <td id="humidity">
+                                    0%
                                 </td>
                             </tr>
                             <tr>
@@ -119,17 +108,19 @@
                                         Wind
                                     </strong>
                                 </td>
-                                <td>
-                                    6km WNW
+                                <td id="wind">
+                                    0 kph N
                                 </td>
+                                <!-- Try with other info
                                 <td>
                                     <strong>
                                         UV
                                     </strong>
                                 </td>
-                                <td>
+                                <td id="UV">
                                     Low
                                 </td>
+                                -->
                             </tr>
                             <tr>
                                 <td>
@@ -137,16 +128,16 @@
                                         Visibility
                                     </strong>
                                 </td>
-                                <td>
-                                    16.09 km
+                                <td id="vis">
+                                    0 km
                                 </td>
                                 <td>
                                     <strong>
                                         Pressure
                                     </strong>
                                 </td>
-                                <td>
-                                    101.6 kPa
+                                <td id="pressure">
+                                    0 kPa
                                 </td>
                             </tr>
                             <tr>
@@ -155,16 +146,16 @@
                                         Sunrise
                                     </strong>
                                 </td>
-                                <td>
-                                    7:28 a.m.
+                                <td id="sunrise">
+                                    0:00
                                 </td>
                                 <td>
                                     <strong>
                                         Sunset
                                     </strong>
                                 </td>
-                                <td>
-                                    6:28 p.m.
+                                <td id="sunset">
+                                    0:00
                                 </td>
                             </tr>
                         </table>
@@ -183,12 +174,16 @@
             <div class="daily_container">
                 <div class="grid_container">
                     <div class="row1-1">
-                        Fri
+                        <span id="day1">
+                            Mon
+                        </span>
                         <br>
-                        Oct 13
+                        <span id="date1">
+                            01/01
+                        </span>
                     </div>
                     <div class="row1-2">
-                        SUNNY
+                        <img src="https://openweathermap.org/img/wn/10d.png" alt="Weather Icon" id="icon1">
                     </div>
                     <div class="row1-3">
                         <table>
@@ -198,8 +193,8 @@
                                         High
                                     </strong>
                                 </td>
-                                <td>
-                                    20°
+                                <td id="high1">
+                                    0°
                                 </td>
                             </tr>
                             <tr>
@@ -208,18 +203,20 @@
                                         Low
                                     </strong>
                                 </td>
-                                <td>
-                                    12°
+                                <td id="low1">
+                                    0°
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <div class="row1-4">
-                        10%
+                        <span id="pop1">
+                            0%
+                        </span>
                         <br>
                         5 mm
                     </div>
-                    <div class="row2">
+                    <div class="row2" id="desc1">
                         Partly Cloudy
                     </div>
                 </div>
