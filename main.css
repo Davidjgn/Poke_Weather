@@ -1,0 +1,137 @@
+.header{
+    font-size: 30px;
+    width: 100%;
+    padding: 10px 10px;
+    color: white;
+    font-weight: bold;
+}
+#header{
+    background-color: rgb(216, 6, 6);
+    background: repeating-linear-gradient(-45deg, rgb(216, 6, 6), rgb(216, 6, 6) 10px, rgb(180, 6, 6) 1px, rgb(180, 6, 6) 25px);
+}
+.location{
+    font-size: 30px;
+    color: rgb(48, 48, 48);
+    display: inline;
+}
+.arrow{
+    font-size: 25px;
+    color: rgb(48, 48, 48);
+    text-decoration: none;
+    display: inline-block;
+}
+.city{
+    display: none;
+    border-radius: 5px;
+    border: 1px rgb(180, 6, 6) solid;
+    margin-bottom: 5px;
+}
+.city_BTN{
+    display: none;
+    border: none;
+    background-color: rgb(204, 204, 204);
+    border-radius: 5px;
+}
+.location i{
+    font-size: 20px;
+}
+.separator{
+    font-size: 20px;
+    color: rgb(48, 48, 48);
+    position: relative;
+}
+.separator > span{
+    background-color: white;
+    padding-right: 10px;
+}
+.separator > div{
+    background-color: white;
+}
+.separator i{
+    position: relative;
+    right: -120px;
+    background-color: white;
+}
+.separator :after{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.5em;
+    border-top: 1px solid rgb(223, 17, 17);
+    z-index: -1;
+}
+.flex_container{
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.box{
+    width: 351px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px #b1b1b1;
+}
+#temperature{
+    font-size: 50px;
+}
+.stats{
+    margin: 10px 10px;
+}
+.daily_container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/*Grid Styling*/
+.grid_container{
+    display: grid;
+    grid-template-areas: 
+    'row1-1 row1-2 row1-3 row1-4'
+    'row2 row2 row2 row2';
+    box-shadow: 2px 2px 8px #cecece;
+    border-radius: 5px;
+}
+.row1-1{
+    grid-area: row1-1;
+    padding-left: 10px;
+}
+.row1-2{
+    grid-area: row1-2;
+}
+.row1-3{
+    grid-area: row1-3;
+}
+.row1-4{
+    grid-area: row1-4;
+}
+.row2{
+    grid-area: row2;
+    padding-left: 10px;
+}
+/*Grid responsive*/
+@media screen and (min-width: 576px){
+    .grid_container{
+        grid-template-areas: 
+        'row1-1 row1-2 row1-3 row1-4 row2';
+    }
+    .row2{
+        padding-left: 0;
+    }
+}
+/*Footer*/
+.footer{
+    background-color: rgb(20, 20, 44);
+    margin-top: 20px;
+    color: white;
+    & h3{
+        margin: 0;
+    }
+    & a{
+        text-decoration: none;
+        color: white;
+    }
+}
