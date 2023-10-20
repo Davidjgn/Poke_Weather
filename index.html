@@ -15,7 +15,7 @@
 
     <script src="./Api_Fetcher.js"></script>
     <script>
-        
+
     </script>
 </head>
 
@@ -37,7 +37,7 @@
             </a>
             <br>
             <input type="text" class="city" id="city">
-            <button class="city_BTN" id="city_BTN" onclick="FetchFunction(), fetchWeather(), fetchForecast()">
+            <button class="city_BTN" id="city_BTN" onclick=" fetchWeather(), fetchForecast()">
                 <i class="fa-solid fa-arrow-right"></i>
             </button>
             <br>
@@ -57,9 +57,16 @@
                     </div>
                     <div class="d-inline">
                         <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" id="icon">
-                        
+                        <!-- PokeIMG -->
+                        <div id="">
+                            <div class="">
+                                <img class="" id="pkmImages" src="" alt="Pokemon">
+                                <p id="pkmName"></p>
+                                <p id="pkmTypes"></p>
+                            </div>
+                        </div>
                         <span id="main_description">
-                            
+
                         </span>
                     </div>
                 </div>
@@ -214,78 +221,194 @@
                             0%
                         </span>
                         <br>
-                        5 mm
+
                     </div>
                     <div class="row2" id="desc1">
-                        Partly Cloudy
+
                     </div>
                 </div>
                 <div class="grid_container">
                     <div class="row1-1">
-                        a
+                        <span id="day2">
+                            Tue
+                        </span>
+                        <br>
+                        <span id="date2">
+                            01/02
+                        </span>
                     </div>
                     <div class="row1-2">
-                        a
+                        <img src="https://openweathermap.org/img/wn/10d.png" alt="Weather Icon" id="icon2">
                     </div>
                     <div class="row1-3">
-                        a
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        High
+                                    </strong>
+                                </td>
+                                <td id="high2">
+                                    0°
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Low
+                                    </strong>
+                                </td>
+                                <td id="low2">
+                                    0°
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="row1-4">
-                        a
+                        <span id="pop2">
+                            0%
+                        </span>
                     </div>
-                    <div class="row2">
-                        a
+                    <div class="row2" id="desc2">
+
                     </div>
                 </div>
                 <div class="grid_container">
                     <div class="row1-1">
-                        a
+                        <span id="day3">
+                            Wed
+                        </span>
+                        <br>
+                        <span id="date3">
+                            01/03
+                        </span>
                     </div>
                     <div class="row1-2">
-                        a
+                        <img src="https://openweathermap.org/img/wn/10d.png" alt="Weather Icon" id="icon3">
                     </div>
                     <div class="row1-3">
-                        a
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        High
+                                    </strong>
+                                </td>
+                                <td id="high3">
+                                    0°
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Low
+                                    </strong>
+                                </td>
+                                <td id="low3">
+                                    0°
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="row1-4">
-                        a
+                        <span id="pop3">
+                            0%
+                        </span>
                     </div>
-                    <div class="row2">
-                        a
+                    <div class="row2" id="desc3">
+
                     </div>
                 </div>
                 <div class="grid_container">
                     <div class="row1-1">
-                        a
+                        <span id="day4">
+                            Thur
+                        </span>
+                        <br>
+                        <span id="date4">
+                            01/04
+                        </span>
                     </div>
                     <div class="row1-2">
-                        a
+                        <img src="https://openweathermap.org/img/wn/10d.png" alt="Weather Icon" id="icon4">
                     </div>
                     <div class="row1-3">
-                        a
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        High
+                                    </strong>
+                                </td>
+                                <td id="high4">
+                                    0°
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Low
+                                    </strong>
+                                </td>
+                                <td id="low4">
+                                    0°
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="row1-4">
-                        a
+                        <span id="pop4">
+                            0%
+                        </span>
                     </div>
-                    <div class="row2">
-                        a
+                    <div class="row2" id="desc4">
+
                     </div>
                 </div>
                 <div class="grid_container">
                     <div class="row1-1">
-                        a
+                        <span id="day5">
+                            Fri
+                        </span>
+                        <br>
+                        <span id="date5">
+                            01/05
+                        </span>
                     </div>
                     <div class="row1-2">
-                        a
+                        <img src="https://openweathermap.org/img/wn/10d.png" alt="Weather Icon" id="icon5">
                     </div>
                     <div class="row1-3">
-                        a
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        High
+                                    </strong>
+                                </td>
+                                <td id="high5">
+                                    0°
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>
+                                        Low
+                                    </strong>
+                                </td>
+                                <td id="low5">
+                                    0°
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="row1-4">
-                        a
+                        <span id="pop5">
+                            0%
+                        </span>
                     </div>
-                    <div class="row2">
-                        a
+                    <div class="row2" id="desc5">
+
                     </div>
                 </div>
             </div>

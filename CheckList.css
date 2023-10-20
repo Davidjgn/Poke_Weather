@@ -11,7 +11,7 @@ while having it hosted on a web server is so that they can see the project live 
 The project files should demonstrate an appropriate structure and organization, including proper file and directory naming conventions. 
 This includes having the index.html file in the root of your project directory. */
 
-3. README File
+/* 3. README File
 The project should have a README.md file at the root directory which potential employers can easily access and read on GitHub, 
 and which clearly and concisely describes what the project is about (what you built and what you are showcasing with that project), 
 as well as any other relevant information such as navigation/usage instruction and authors if applicable.
@@ -75,7 +75,7 @@ The project should also demonstrate understanding and appropriate usage of JavaS
 You must achieve this by using jQuery AJAX somewhere in your project.
 
 Note E: You must add comments in your JavaScript code to indicate where you are using native JS to make API calls, 
-and where you are using a JavaScript Library (jQuery AJAX). This way employers will see you understand and can use both approaches.
+and where you are using a JavaScript Library (jQuery AJAX). This way employers will see you understand and can use both approaches. */
 
 17. State Management with vanilla / native JavaScript
 The project should demonstrate understanding and appropriate usage of native ES6+ JavaScript to preserve 
@@ -89,7 +89,7 @@ b) you can only store string data, so your arrays and objects need to be parsed,
 c) it is inappropriate to store sensitive data such as login credentials in localStorage because it is not secure, and 
 d) localStorage is inaccessible in incognito/private browsing modes.
 
-18. Responsive
+/* 18. Responsive
 The web app should be fully responsive, adapting well to the four categories of screen sizes: Phone, Tablet, Desktop, and Wide Screen. 
 
 19. Theme
@@ -134,4 +134,4 @@ News API: A simple HTTP REST API for searching and retrieving live articles. It 
 "What's happening right now in the world?".
 
 NASA API: A collection of various space-related APIs.
-There are more free/public APIs out there, these are just some examples to help get you started
+There are more free/public APIs out there, these are just some examples to help get you started */
