@@ -1,21 +1,4 @@
-//hide and show city input
-function CityInput() {
-    const city = document.getElementById("city");
-    if (city.style.display == "inline") {
-        document.getElementById("city").style.display = "none";
-        document.getElementById("city_BTN").style.display = "none";
-    }
-    else {
-        document.getElementById("city").style.display = "inline";
-        document.getElementById("city_BTN").style.display = "inline";
-    }
-}
-function FetchFunction() {
-    document.getElementById("city").style.display = "none";
-    document.getElementById("city_BTN").style.display = "none";
 
-    document.getElementById("location").innerHTML = document.getElementById("city").value;
-}
 
 //converte the unix time format to the yyyy/mm/dd hh:mm:ss format
 function unixConverter(unixTime) {
@@ -28,7 +11,7 @@ function unixConverter(unixTime) {
     const seconds = String(date.getSeconds()).padStart(2, '0');
 
     return `${hours}:${minutes}`;
-   // return `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
+    // return `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
 }
 function unixConverter1(unixTime) {
     const date = new Date(unixTime * 1000);
@@ -40,7 +23,7 @@ function unixConverter1(unixTime) {
     const seconds = String(date.getSeconds()).padStart(2, '0');
 
     return `${month}/${day}`;
-   // return `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
+    // return `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
 }
 
 // converter the time zone to the UTC format
@@ -100,6 +83,7 @@ function windDirection(windDeg) {
 
 // MAIN THING IN THIS CODE -- this fetch the information from the API
 function fetchWeather() {
+
     const cityName = document.getElementById('city').value;
 
     // API key provided by me by signing up to the site
@@ -121,6 +105,14 @@ function fetchWeather() {
             return response.json();
         })
         .then(data => {
+            const locCity = data.name + ", " + data.sys.country;
+          
+            document.getElementById("city").style.display = "none";
+          
+            document.getElementById("city_BTN").style.display = "none";
+
+            document.getElementById("location").innerHTML = locCity;
+          
             const unixTime = data.dt; //time variable in unix time 
             const unixTime1 = data.sys.sunrise; //sunrise time variable in unix time 
             const unixTime2 = data.sys.sunset;  //sunset time variable in unix time 
@@ -137,11 +129,11 @@ function fetchWeather() {
             document.getElementById("temperature").innerHTML = Math.round(data.main.temp) + "°C";
             //weather Icon
             const iconSrc = data.weather[0].icon;
-            document.getElementById("icon").src = 'https://openweathermap.org/img/wn/'+iconSrc+'@2x.png';
+            document.getElementById("icon").src = 'https://openweathermap.org/img/wn/' + iconSrc + '@2x.png';
 
             //description
-            document.getElementById("main_description").innerHTML = data.weather[0].main + ", " + data.weather[0].description;
-           
+            document.getElementById("main_description").innerHTML = data.weather[0].main;
+
             //Highest temperature
             document.getElementById("high").innerHTML = Math.round(data.main.temp_max) + "°C";
 
@@ -155,13 +147,13 @@ function fetchWeather() {
             document.getElementById("humidity").innerHTML = Math.round(data.main.humidity) + "%";
 
             //wind speed and direction
-            document.getElementById("wind").innerHTML = Math.round(data.wind.speed * 3.6) + " kph "+ windDirection(data.wind.deg)+" ";
+            document.getElementById("wind").innerHTML = Math.round(data.wind.speed * 3.6) + " kph " + windDirection(data.wind.deg) + " ";
 
             //visibility
-            document.getElementById("vis").innerHTML = data.visibility/1000 + " km ";
+            document.getElementById("vis").innerHTML = data.visibility / 1000 + " km ";
 
             //pressure
-            document.getElementById("pressure").innerHTML = data.main.pressure/10 + " kPa";
+            document.getElementById("pressure").innerHTML = data.main.pressure / 10 + " kPa";
 
             //sunrise
             document.getElementById("sunrise").innerHTML = formattedDateTime1;
@@ -170,7 +162,7 @@ function fetchWeather() {
             document.getElementById("sunset").innerHTML = formattedDateTime2;
         })
         .catch(error => {
-            document.getElementById('result').innerHTML = `<p>Error: ${error.message}</p>`;
+            document.getElementById('location').innerHTML = `<p>Error: ${error.message}</p>`;
         });
 }
 
@@ -199,107 +191,156 @@ function fetchForecast() {
             return response.json();
         })
         .then(data => {
-            //Day and Date
+            //Day and Date ||||||||||||||||||||||||||
             //first day
             document.getElementById("day1").innerHTML = dayWeek(data.list[3].dt);
 
             document.getElementById("date1").innerHTML = unixConverter1(data.list[3].dt);
 
-            //Icons
+            //second day
+            document.getElementById("day2").innerHTML = dayWeek(data.list[11].dt);
+
+            document.getElementById("date2").innerHTML = unixConverter1(data.list[11].dt);
+
+            //third day
+            document.getElementById("day3").innerHTML = dayWeek(data.list[19].dt);
+
+            document.getElementById("date3").innerHTML = unixConverter1(data.list[19].dt);
+
+            //fourth day
+            document.getElementById("day4").innerHTML = dayWeek(data.list[27].dt);
+
+            document.getElementById("date4").innerHTML = unixConverter1(data.list[27].dt);
+
+            //fifth day
+            document.getElementById("day5").innerHTML = dayWeek(data.list[35].dt);
+
+            document.getElementById("date5").innerHTML = unixConverter1(data.list[35].dt);
+
+            //Icons ||||||||||||||||||||||||||||||||||
             //first day
             const icon1Src = data.list[3].weather[0].icon;
-            document.getElementById("icon1").src = 'https://openweathermap.org/img/wn/'+icon1Src+'.png';
+            document.getElementById("icon1").src = 'https://openweathermap.org/img/wn/' + icon1Src + '.png';
 
-            //High
+            //second day
+            const icon2Src = data.list[11].weather[0].icon;
+            document.getElementById("icon2").src = 'https://openweathermap.org/img/wn/' + icon2Src + '.png';
+
+            //third day
+            const icon3Src = data.list[19].weather[0].icon;
+            document.getElementById("icon3").src = 'https://openweathermap.org/img/wn/' + icon3Src + '.png';
+
+            //fourth day
+            const icon4Src = data.list[27].weather[0].icon;
+            document.getElementById("icon4").src = 'https://openweathermap.org/img/wn/' + icon4Src + '.png';
+
+            //fifth day
+            const icon5Src = data.list[35].weather[0].icon;
+            document.getElementById("icon5").src = 'https://openweathermap.org/img/wn/' + icon5Src + '.png';
+
+            //High ||||||||||||||||||||||||||||||||||
             //first day
-            const tempMax1 = Math.max(data.list[0].main.temp_max, data.list[1].main.temp_max, data.list[2].main.temp_max, data.list[3].main.temp_max, data.list[4].main.temp_max, data.list[5].main.temp_max, data.list[6].main.temp_max);
+            const tempMax1 = Math.max(data.list[0].main.temp_max, data.list[1].main.temp_max, data.list[2].main.temp_max, data.list[3].main.temp_max, data.list[4].main.temp_max, data.list[5].main.temp_max, data.list[6].main.temp_max, data.list[7].main.temp_max);
 
             document.getElementById("high1").innerHTML = Math.round(tempMax1) + "°C";
 
-            //Low
+            //second day
+            const tempMax2 = Math.max(data.list[8].main.temp_max, data.list[9].main.temp_max, data.list[10].main.temp_max, data.list[11].main.temp_max, data.list[12].main.temp_max, data.list[13].main.temp_max, data.list[14].main.temp_max, data.list[15].main.temp_max);
+
+            document.getElementById("high2").innerHTML = Math.round(tempMax2) + "°C";
+
+            //third day
+            const tempMax3 = Math.max(data.list[16].main.temp_max, data.list[17].main.temp_max, data.list[18].main.temp_max, data.list[19].main.temp_max, data.list[20].main.temp_max, data.list[21].main.temp_max, data.list[22].main.temp_max, data.list[23].main.temp_max);
+
+            document.getElementById("high3").innerHTML = Math.round(tempMax3) + "°C";
+
+            //fourth day
+            const tempMax4 = Math.max(data.list[24].main.temp_max, data.list[25].main.temp_max, data.list[26].main.temp_max, data.list[27].main.temp_max, data.list[28].main.temp_max, data.list[29].main.temp_max, data.list[30].main.temp_max, data.list[31].main.temp_max);
+
+            document.getElementById("high4").innerHTML = Math.round(tempMax4) + "°C";
+
+            //fifth day
+            const tempMax5 = Math.max(data.list[32].main.temp_max, data.list[33].main.temp_max, data.list[34].main.temp_max, data.list[35].main.temp_max, data.list[36].main.temp_max, data.list[37].main.temp_max, data.list[38].main.temp_max, data.list[39].main.temp_max);
+
+            document.getElementById("high5").innerHTML = Math.round(tempMax5) + "°C";
+
+            //Low ||||||||||||||||||||||||||||||||||||
             //First day
-            const tempMin1 = Math.min(data.list[0].main.temp_min, data.list[1].main.temp_min, data.list[2].main.temp_min, data.list[3].main.temp_min, data.list[4].main.temp_min, data.list[5].main.temp_min, data.list[6].main.temp_min);
+            const tempMin1 = Math.min(data.list[0].main.temp_min, data.list[1].main.temp_min, data.list[2].main.temp_min, data.list[3].main.temp_min, data.list[4].main.temp_min, data.list[5].main.temp_min, data.list[6].main.temp_min, data.list[7].main.temp_min);
 
             document.getElementById("low1").innerHTML = Math.round(tempMin1) + "°C";
 
-            //POP
+            //second day
+            const tempMin2 = Math.min(data.list[8].main.temp_min, data.list[9].main.temp_min, data.list[10].main.temp_min, data.list[11].main.temp_min, data.list[12].main.temp_min, data.list[13].main.temp_min, data.list[14].main.temp_min, data.list[15].main.temp_min);
+
+            document.getElementById("low2").innerHTML = Math.round(tempMin2) + "°C";
+
+            //third day
+            const tempMin3 = Math.min(data.list[16].main.temp_min, data.list[17].main.temp_min, data.list[18].main.temp_min, data.list[19].main.temp_min, data.list[20].main.temp_min, data.list[21].main.temp_min, data.list[22].main.temp_min, data.list[23].main.temp_min);
+
+            document.getElementById("low3").innerHTML = Math.round(tempMin3) + "°C";
+
+            //fourth day
+            const tempMin4 = Math.min(data.list[24].main.temp_min, data.list[25].main.temp_min, data.list[26].main.temp_min, data.list[27].main.temp_min, data.list[28].main.temp_min, data.list[29].main.temp_min, data.list[30].main.temp_min, data.list[31].main.temp_min);
+
+            document.getElementById("low4").innerHTML = Math.round(tempMin4) + "°C";
+
+            //fifth day
+            const tempMin5 = Math.min(data.list[32].main.temp_min, data.list[33].main.temp_min, data.list[34].main.temp_min, data.list[35].main.temp_min, data.list[36].main.temp_min, data.list[37].main.temp_min, data.list[38].main.temp_min, data.list[39].main.temp_min);
+
+            document.getElementById("low5").innerHTML = Math.round(tempMin5) + "°C";
+
+            //POP ||||||||||||||||||||||||||||||||||||
             //First day
-            document.getElementById("pop1").innerHTML = 100 * (data.list[3].pop) + "%";
+            document.getElementById("pop1").innerHTML = Math.round(100 * (data.list[3].pop)) + "%";
 
-            //Description
+            //second day
+            document.getElementById("pop2").innerHTML = Math.round(100 * (data.list[11].pop)) + "%";
+
+            //third day
+            document.getElementById("pop3").innerHTML = Math.round(100 * (data.list[19].pop)) + "%";
+
+            //fourth day
+            document.getElementById("pop4").innerHTML = Math.round(100 * (data.list[27].pop)) + "%";
+
+            //fifth day
+            document.getElementById("pop5").innerHTML = Math.round(100 * (data.list[35].pop)) + "%";
+
+            //Description ||||||||||||||||||||||||||||
             //First day
-            document.getElementById("desc1").innerHTML = data.list[3].weather[0].main + data.list[3].weather[0].description;
-            /*
-            // Max and Min Temp for the day
-            
-            const tempMin2 = Math.min(data.list[7].main.temp_min, data.list[8].main.temp_min, data.list[9].main.temp_min, data.list[10].main.temp_min, data.list[11].main.temp_min, data.list[12].main.temp_min, data.list[13].main.temp_min);
-            const tempMin3 = Math.min(data.list[14].main.temp_min, data.list[15].main.temp_min, data.list[16].main.temp_min, data.list[17].main.temp_min, data.list[18].main.temp_min, data.list[19].main.temp_min, data.list[20].main.temp_min);
-            const tempMin4 = Math.min(data.list[21].main.temp_min, data.list[22].main.temp_min, data.list[23].main.temp_min, data.list[24].main.temp_min, data.list[25].main.temp_min, data.list[26].main.temp_min, data.list[27].main.temp_min);
-            const tempMin5 = Math.min(data.list[28].main.temp_min, data.list[29].main.temp_min, data.list[30].main.temp_min, data.list[31].main.temp_min, data.list[32].main.temp_min, data.list[33].main.temp_min, data.list[34].main.temp_min);
-            
-            
-            const tempMax2 = Math.max(data.list[7].main.temp_max, data.list[8].main.temp_max, data.list[9].main.temp_max, data.list[10].main.temp_max, data.list[11].main.temp_max, data.list[12].main.temp_max, data.list[13].main.temp_max);
-            const tempMax3 = Math.max(data.list[14].main.temp_max, data.list[15].main.temp_max, data.list[16].main.temp_max, data.list[17].main.temp_max, data.list[18].main.temp_max, data.list[19].main.temp_max, data.list[20].main.temp_max);
-            const tempMax4 = Math.max(data.list[21].main.temp_max, data.list[22].main.temp_max, data.list[23].main.temp_max, data.list[24].main.temp_max, data.list[25].main.temp_max, data.list[26].main.temp_max, data.list[27].main.temp_max);
-            const tempMax5 = Math.max(data.list[28].main.temp_max, data.list[29].main.temp_max, data.list[30].main.temp_max, data.list[31].main.temp_max, data.list[32].main.temp_max, data.list[33].main.temp_max, data.list[34].main.temp_max);
+            document.getElementById("desc1").innerHTML = data.list[3].weather[0].main;
 
+            //second day
+            document.getElementById("desc2").innerHTML = data.list[11].weather[0].main;
 
-            //Show the information from the JSON
-            document.getElementById('result2').innerHTML = `
-           <h2>Forecast in ${cityName} - ${data.city.name}, ${data.city.country}:</h2>
-           
-           <p>Date: ${dayWeek(data.list[3].dt)}, ${data.list[3].dt_txt}</p>
-           <img src="https://openweathermap.org/img/wn/${data.list[3].weather[0].icon}.png" alt="weather icon">
-           
-           <p>Weather: ${data.list[3].weather[0].main} - ${data.list[3].weather[0].description}</p>
-           <p>Temperature: ${data.list[3].main.temp} °C</p>
-           <p>Minimal: ${tempMin1} °C</p> 
-           <p>Maximum: ${tempMax1} °C</p>
-           <p>PoP: ${100 * (data.list[3].pop)} % </p>
-           <br>
-                      
+            //third day
+            document.getElementById("desc3").innerHTML = data.list[19].weather[0].main;
 
-           <p>Date: ${dayWeek(data.list[11].dt)}, ${data.list[11].dt_txt}</p>
-           <img src="https://openweathermap.org/img/wn/${data.list[11].weather[0].icon}.png" alt="weather icon">
-           
-           <p>Weather: ${data.list[11].weather[0].main} - ${data.list[11].weather[0].description}</p>
-           <p>Temperature: ${data.list[11].main.temp} °C</p>
-           <p>Minimal: ${tempMin2} °C</p> 
-           <p>Maximum: ${tempMax2} °C</p>
-           <p>PoP: ${100 * (data.list[11].pop)} % </p>
-           <br>
+            //fourth day
+            document.getElementById("desc4").innerHTML = data.list[27].weather[0].main;
 
-           <p>Date: ${dayWeek(data.list[19].dt)}, ${data.list[19].dt_txt}</p>
-           <img src="https://openweathermap.org/img/wn/${data.list[19].weather[0].icon}.png" alt="weather icon">
-           
-           <p>Weather: ${data.list[19].weather[0].main} - ${data.list[19].weather[0].description}</p>
-           <p>Temperature: ${data.list[19].main.temp} °C</p>
-           <p>Minimal: ${tempMin3} °C</p> 
-           <p>Maximum: ${tempMax3} °C</p>
-           <p>PoP: ${100 * (data.list[19].pop)} % </p>
-<br>
-
-           <p>Date: ${dayWeek(data.list[27].dt)}, ${data.list[27].dt_txt}</p>
-           <img src="https://openweathermap.org/img/wn/${data.list[27].weather[0].icon}.png" alt="weather icon">
-           
-           <p>Weather: ${data.list[27].weather[0].main} - ${data.list[27].weather[0].description}</p>
-           <p>Temperature: ${data.list[27].main.temp} °C</p>
-           <p>Minimal: ${tempMin4} °C</p> 
-           <p>Maximum: ${tempMax4} °C</p>
-           <p>PoP: ${100 * (data.list[27].pop)} % </p>
-           <br>
-
-           <p>Date: ${dayWeek(data.list[35].dt)}, ${data.list[35].dt_txt}</p>
-           <img src="https://openweathermap.org/img/wn/${data.list[35].weather[0].icon}.png" alt="weather icon">
-           
-           <p>Weather: ${data.list[35].weather[0].main} - ${data.list[35].weather[0].description}</p>
-           <p>Temperature: ${data.list[35].main.temp} °C</p>
-           <p>Minimal: ${tempMin5} °C</p> 
-           <p>Maximum: ${tempMax5} °C</p>
-           <p>PoP: ${100 * (data.list[35].pop)} % </p>
-      `;*/
+            //fifth day
+            document.getElementById("desc5").innerHTML = data.list[35].weather[0].main;
         })
         .catch(error => {
             document.getElementById('result2').innerHTML = `<p>Error: ${error.message}</p>`;
         });
 }
+//hide and show city input
+function CityInput() {
+    const city = document.getElementById("city");
+    if (city.style.display == "inline") {
+        document.getElementById("city").style.display = "none";
+        document.getElementById("city_BTN").style.display = "none";
+    }
+    else {
+        document.getElementById("city").style.display = "inline";
+        document.getElementById("city_BTN").style.display = "inline";
+    }
+}
+/*function FetchFunction() {
+    document.getElementById("city").style.display = "none";
+    document.getElementById("city_BTN").style.display = "none";
+
+    document.getElementById("location").innerHTML = locCity;
+}*/
