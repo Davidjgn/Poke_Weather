@@ -9,13 +9,13 @@
 
     <link rel="stylesheet" href="./main.css">
 
-    <script src="https://kit.fontawesome.com/9e6a36f458.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2130044614.js" crossorigin="anonymous"></script>
 
     <title>index</title>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="./Api_Fetcher.js"></script>
-    <script src="./Api_Poketmon.js"></script>
+    <!--<script src="./Api_Poketmon.js"></script>-->
 </head>
 
 <body>
@@ -25,7 +25,7 @@
             POKÉ-WEATHER
         </h1>
     </section>
-    <div class="container-fluid ">
+    <div class="container-fluid" id="background">
         <section class="container-fluid p-0">
             <hr class="mt-1">
             <h1 class="location" id="location">
@@ -57,16 +57,12 @@
                     <div class="d-inline">
                         <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" id="icon">
                         <!-- PokeIMG -->
-                        <div id="">
-                            <div class="">
-                                <img class="" id="pkmImages" src="" alt="Pokemon">
-                                <p id="pkmName"></p>
-                                <p id="pkmTypes"></p>
-                            </div>
+                        <div class="d-inline">
+                            <img class="" id="pkmImages" src="" alt="Pokemon">
+                            <p id="pkmName"></p>
+                            <p id="pkmTypes"></p>
                         </div>
-                        <span id="main_description">
-
-                        </span>
+                        
                     </div>
                 </div>
                 <div class="box">
@@ -81,7 +77,7 @@
                                 <td id="high"> <!--High temp for the day-->
                                     0°C
                                 </td>
-                                <td>
+                                <td class="right-row">
                                     <strong>
                                         Low
                                     </strong>
@@ -99,7 +95,7 @@
                                 <td id="feel">
                                     0°C
                                 </td>
-                                <td>
+                                <td class="right-row">
                                     <strong>
                                         Humidity
                                     </strong>
@@ -117,16 +113,16 @@
                                 <td id="wind">
                                     0 kph N
                                 </td>
-                                <!-- Try with other info
-                                <td>
+                                
+                                <td class="right-row">
                                     <strong>
-                                        UV
+                                        Weather
                                     </strong>
                                 </td>
-                                <td id="UV">
-                                    Low
+                                <td>
+                                    <span id="main_description">
+                                    </span>
                                 </td>
-                                -->
                             </tr>
                             <tr>
                                 <td>
@@ -137,7 +133,7 @@
                                 <td id="vis">
                                     0 km
                                 </td>
-                                <td>
+                                <td class="right-row">
                                     <strong>
                                         Pressure
                                     </strong>
@@ -155,7 +151,7 @@
                                 <td id="sunrise">
                                     0:00
                                 </td>
-                                <td>
+                                <td class="right-row">
                                     <strong>
                                         Sunset
                                     </strong>
@@ -222,8 +218,11 @@
                         <br>
 
                     </div>
-                    <div class="row2" id="desc1">
+                    <div class="row2-1" id="desc1">
 
+                    </div>
+                    <div class="row2-2">
+                        <img src="" alt="" id="pkmId1">
                     </div>
                 </div>
                 <div class="grid_container">
@@ -268,9 +267,13 @@
                             0%
                         </span>
                     </div>
-                    <div class="row2" id="desc2">
-
+                    <div class="row2-1" id="desc2">
+                        
                     </div>
+                    <div class="row2-2">
+                        <img src="" alt="" id="pkmId2">
+                    </div>
+                    
                 </div>
                 <div class="grid_container">
                     <div class="row1-1">
@@ -314,8 +317,11 @@
                             0%
                         </span>
                     </div>
-                    <div class="row2" id="desc3">
+                    <div class="row2-1" id="desc3">
 
+                    </div>
+                    <div class="row2-2">
+                        <img src="" alt="" id="pkmId3">
                     </div>
                 </div>
                 <div class="grid_container">
@@ -360,8 +366,11 @@
                             0%
                         </span>
                     </div>
-                    <div class="row2" id="desc4">
+                    <div class="row2-1" id="desc4">
 
+                    </div>
+                    <div class="row2-2">
+                        <img src="" alt="" id="pkmId4">
                     </div>
                 </div>
                 <div class="grid_container">
@@ -406,8 +415,11 @@
                             0%
                         </span>
                     </div>
-                    <div class="row2" id="desc5">
+                    <div class="row2-1" id="desc5">
 
+                    </div>
+                    <div class="row2-2">
+                        <img src="" alt="" id="pkmId5">
                     </div>
                 </div>
             </div>

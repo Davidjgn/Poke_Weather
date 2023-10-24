@@ -1,3 +1,4 @@
+/*
 $(document).ready(function () {
     const mainDescriptionElement = $("#main_description");
     const iconElement = $("#icon");
@@ -104,3 +105,4 @@ $(document).ready(function () {
         });
     }
 });
+*/

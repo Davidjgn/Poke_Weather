@@ -1,4 +1,94 @@
+function showpkmTypes(desc, imgId) {
+    // Choose the appropriate API endpoint based on the selected type
+    let type;
 
+    if(desc == "01d"){
+        type = "fire";
+    }
+    else if(desc == "01n"){
+        type = "normal";
+    }
+    else if(desc == "02d"){
+        type = "dragon";
+    }
+    else if(desc == "02n"){
+        type = "steel"
+    }
+    else if(desc == "03d"){
+        type = "flying";
+    }
+    else if(desc == "03n"){
+        type = "rock"
+    }
+    else if(desc == "04d"){
+        type = "fairy";
+    }
+    else if(desc == "04n"){
+        type = "ground";
+    }
+    else if(desc == "09d"){
+        type = "grass";
+    }
+    else if(desc == "09n"){
+        type = "bug";
+    }
+    else if(desc == "10d"){
+        type = "water"
+    }
+    else if(desc == "10n"){
+        type = "dark"
+    }
+    else if(desc == "11d"){
+        type = "electric"
+    }
+    else if(desc == "11n"){
+        type = "psychic"
+    }
+    else if(desc == "13d"){
+        type = "ice"
+    }
+    else if(desc == "13n"){
+        type = "fighting"
+    }
+    else if(desc == "50d"){
+        type = "poison"
+    }
+    else if(desc == "50n"){
+        type = "ghost"
+    }
+    const apiUrl = `https://pokeapi.co/api/v2/type/${type}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            currentPokemonList = data.pokemon;
+
+            const randomIndex = Math.floor(Math.random() * currentPokemonList.length);
+            const randomPokemon = currentPokemonList[randomIndex].pokemon;
+            const apiUrl = randomPokemon.url;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(pokemonData => {
+                    const name = randomPokemon.name;
+                    const imageUrl = pokemonData.sprites.front_default;
+                    //const types = pokemonData.types.map(type => type.type.name).join(", ");
+
+                    
+                    const pkmImages = document.getElementById(imgId);
+                    pkmImages.src = imageUrl;
+                    pkmImages.alt = name;
+                    
+                    
+                })
+                .catch(error => {
+                    console.error('Error fetching Pokemon data: ' + error);
+                });
+        })
+        .catch(error => {
+            console.error('Error fetching data: ' + error);
+        });
+}
 
 //converte the unix time format to the yyyy/mm/dd hh:mm:ss format
 function unixConverter(unixTime) {
@@ -130,10 +220,14 @@ function fetchWeather() {
             //weather Icon
             const iconSrc = data.weather[0].icon;
             document.getElementById("icon").src = 'https://openweathermap.org/img/wn/' + iconSrc + '@2x.png';
+            //MAIN Icon POKEMON
+            let input = String(iconSrc);
+            let id1 = "pkmImages";
+            showpkmTypes(input, id1);
 
             //description
             document.getElementById("main_description").innerHTML = data.weather[0].main;
-
+            
             //Highest temperature
             document.getElementById("high").innerHTML = Math.round(data.main.temp_max) + "°C";
 
@@ -221,22 +315,42 @@ function fetchForecast() {
             //first day
             const icon1Src = data.list[3].weather[0].icon;
             document.getElementById("icon1").src = 'https://openweathermap.org/img/wn/' + icon1Src + '.png';
+            //Icon POKEMON 1
+            let Src1 = String(icon1Src);
+            let pkmId1 = "pkmId1";
+            showpkmTypes(Src1, pkmId1);
 
             //second day
             const icon2Src = data.list[11].weather[0].icon;
             document.getElementById("icon2").src = 'https://openweathermap.org/img/wn/' + icon2Src + '.png';
+            //Icon POKEMON 2
+            let Src2 = String(icon2Src);
+            let pkmId2 = "pkmId2";
+            showpkmTypes(Src2, pkmId2);
 
             //third day
             const icon3Src = data.list[19].weather[0].icon;
             document.getElementById("icon3").src = 'https://openweathermap.org/img/wn/' + icon3Src + '.png';
+            //Icon POKEMON 3
+            let Src3 = String(icon3Src);
+            let pkmId3 = "pkmId3";
+            showpkmTypes(Src3, pkmId3);
 
             //fourth day
             const icon4Src = data.list[27].weather[0].icon;
             document.getElementById("icon4").src = 'https://openweathermap.org/img/wn/' + icon4Src + '.png';
+            //Icon POKEMON 4
+            let Src4 = String(icon4Src);
+            let pkmId4 = "pkmId4";
+            showpkmTypes(Src4, pkmId4);
 
             //fifth day
             const icon5Src = data.list[35].weather[0].icon;
             document.getElementById("icon5").src = 'https://openweathermap.org/img/wn/' + icon5Src + '.png';
+            //Icon POKEMON 5
+            let Src5 = String(icon5Src);
+            let pkmId5 = "pkmId5";
+            showpkmTypes(Src5, pkmId5);
 
             //High ||||||||||||||||||||||||||||||||||
             //first day
@@ -292,19 +406,19 @@ function fetchForecast() {
 
             //POP ||||||||||||||||||||||||||||||||||||
             //First day
-            document.getElementById("pop1").innerHTML = Math.round(100 * (data.list[3].pop)) + "%";
+            document.getElementById("pop1").innerHTML = "<strong>POP: </strong>"+ Math.round(100 * (data.list[3].pop)) + "%";
 
             //second day
-            document.getElementById("pop2").innerHTML = Math.round(100 * (data.list[11].pop)) + "%";
+            document.getElementById("pop2").innerHTML = "<strong>POP: </strong>"+ Math.round(100 * (data.list[11].pop)) + "%";
 
             //third day
-            document.getElementById("pop3").innerHTML = Math.round(100 * (data.list[19].pop)) + "%";
+            document.getElementById("pop3").innerHTML = "<strong>POP: </strong>"+ Math.round(100 * (data.list[19].pop)) + "%";
 
             //fourth day
-            document.getElementById("pop4").innerHTML = Math.round(100 * (data.list[27].pop)) + "%";
+            document.getElementById("pop4").innerHTML = "<strong>POP: </strong>"+ Math.round(100 * (data.list[27].pop)) + "%";
 
             //fifth day
-            document.getElementById("pop5").innerHTML = Math.round(100 * (data.list[35].pop)) + "%";
+            document.getElementById("pop5").innerHTML = "<strong>POP: </strong>"+ Math.round(100 * (data.list[35].pop)) + "%";
 
             //Description ||||||||||||||||||||||||||||
             //First day
