@@ -5,30 +5,22 @@
     color: white;
     font-weight: bold;
     margin-bottom: 0;
+    font-family: 'CustomFont', sans-serif;
 }
 #header{
     background-color: rgb(216, 6, 6);
     background: repeating-linear-gradient(-45deg, rgb(228, 47, 47), rgb(228, 47, 47) 10px, rgb(209, 22, 22) 1px, rgb(209, 22, 22) 25px);
     border-bottom: black 4px solid;
 }
+@font-face {
+    font-family: 'CustomFont';
+    src: url('./Pokemon_Classic.ttf') format('truetype');
+    /* You can add additional font properties here if needed */
+  }
 
-#background{
-    padding-top: 10px;
-    background-color: rgb(255, 248, 208);
-    background-image:
-    linear-gradient( #afa971 5px, transparent 5px), 
-    linear-gradient(90deg, #afa971 5px, transparent 5px),
-    linear-gradient( #afa971 5px, transparent 5px),
-    linear-gradient(90deg, #afa971 5px, transparent 5px);
-    background-size:50px 50px, 50px 50px, 50px 50px, 50px 50px;    
-    background-position:-2px -2px, -2px -2px, -2px -2px, -2px -2px;
-}
-.city-container{
-    background-color: rgb(228, 47, 47);
-    width: 180px;
-    border-radius: 10px;
-    border: black solid 4px;
-}
+  body {
+    font-family: 'CustomFont', sans-serif;
+  }
 .location{
     padding-left: 10px;
     font-size: 30px;
@@ -55,8 +47,8 @@
     box-sizing: border-box;
     border: black 4px solid;
 }
-.location i{
-    font-size: 20px;
+.location i {
+  font-size: 20px;
 }
 .separator{
     font-size: 20px;
@@ -68,31 +60,31 @@
     background-color: white;
     /*padding: 10px;*/
 }
-.separator > div{
-    background-color: white;
+.separator > div {
+  background-color: white;
 }
-.separator i{
-    position: relative;
-    right: -120px;
-    background-color: white;
+.separator i {
+  position: relative;
+  right: -120px;
+  background-color: white;
 }
-.separator :after{
-    content:"";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 0.5em;
-    border-top: 1px solid rgb(223, 17, 17);
-    z-index: -1;
+.separator :after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.5em;
+  border-top: 1px solid rgb(223, 17, 17);
+  z-index: -1;
 }
-.flex_container{
-    justify-content: center;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
+.flex_container {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 .box{
     width: 351px;
@@ -138,29 +130,29 @@
     box-sizing: border-box;
     border: black 4px solid;
 }
-.row1-1{
-    grid-area: row1-1;
-    padding-left: 15px;
-    padding-top: 15px;
+.row1-1 {
+  grid-area: row1-1;
+  padding-left: 15px;
+  padding-top: 15px;
 }
-.row1-2{
-    grid-area: row1-2;
-    padding-top: 15px;
+.row1-2 {
+  grid-area: row1-2;
+  padding-top: 15px;
 }
-.row1-3{
-    grid-area: row1-3;
-    padding-top: 15px;
+.row1-3 {
+  grid-area: row1-3;
+  padding-top: 15px;
 }
-.row1-4{
-    grid-area: row1-4;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.row1-4 {
+  grid-area: row1-4;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
-.row2-1{
-    grid-area: row2-1;
-    padding-left: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.row2-1 {
+  grid-area: row2-1;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 .row2-2{
     grid-area: row2-2;
