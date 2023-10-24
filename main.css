@@ -4,43 +4,56 @@
     padding: 10px 10px;
     color: white;
     font-weight: bold;
+    margin-bottom: 0;
 }
 #header{
     background-color: rgb(216, 6, 6);
-    background: repeating-linear-gradient(-45deg, rgb(216, 6, 6), rgb(216, 6, 6) 10px, rgb(180, 6, 6) 1px, rgb(180, 6, 6) 25px);
+    background: repeating-linear-gradient(-45deg, rgb(228, 47, 47), rgb(228, 47, 47) 10px, rgb(209, 22, 22) 1px, rgb(209, 22, 22) 25px);
+    border-bottom: black 4px solid;
 }
-/*
+
 #background{
+    padding-top: 10px;
+    background-color: rgb(255, 248, 208);
     background-image:
-    linear-gradient(45deg, #808080 25%, transparent 25%), 
-    linear-gradient(-45deg, #808080 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, #808080 75%),
-    linear-gradient(-45deg, transparent 75%, #808080 75%);
-    background-size:20px 20px;    
-    background-position:0 0, 10px 0, 10px -10px, 0px 10px;
-}*/
+    linear-gradient( #afa971 5px, transparent 5px), 
+    linear-gradient(90deg, #afa971 5px, transparent 5px),
+    linear-gradient( #afa971 5px, transparent 5px),
+    linear-gradient(90deg, #afa971 5px, transparent 5px);
+    background-size:50px 50px, 50px 50px, 50px 50px, 50px 50px;    
+    background-position:-2px -2px, -2px -2px, -2px -2px, -2px -2px;
+}
+.city-container{
+    background-color: rgb(228, 47, 47);
+    width: 180px;
+    border-radius: 10px;
+    border: black solid 4px;
+}
 .location{
+    padding-left: 10px;
     font-size: 30px;
-    color: rgb(48, 48, 48);
+    color: white;
     display: inline;
 }
 .arrow{
     font-size: 25px;
-    color: rgb(48, 48, 48);
+    color: white;
     text-decoration: none;
     display: inline-block;
 }
 .city{
     display: none;
-    border-radius: 5px;
-    border: 1px rgb(180, 6, 6) solid;
+    border-radius: 10px;
+    border: 4px black solid;
     margin-bottom: 5px;
 }
 .city_BTN{
     display: none;
     border: none;
     background-color: rgb(204, 204, 204);
-    border-radius: 5px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    border: black 4px solid;
 }
 .location i{
     font-size: 20px;
@@ -49,10 +62,11 @@
     font-size: 20px;
     color: rgb(48, 48, 48);
     position: relative;
+    /*margin-bottom: 0;*/
 }
 .separator > span{
     background-color: white;
-    padding-right: 10px;
+    /*padding: 10px;*/
 }
 .separator > div{
     background-color: white;
@@ -83,18 +97,26 @@
 .box{
     width: 351px;
     border-radius: 10px;
-    box-shadow: 4px 4px 8px #b1b1b1;
+    box-shadow: 4px 4px 8px #00000054;
+    background-color: white;
+    box-sizing: border-box;
+    border: black 4px solid;
+}
+.box1{
+    -ms-transform: translateY(1%);
+    transform: translateY(1%);
 }
 #temperature{
     font-size: 50px;
-    padding-left: 15px;
-    margin-top: 20px;
+    padding-left: 20px;
+    position: relative;
+    top: 10px;
 }
 .stats{
-    margin: 10px 15px;
+    margin: 10px auto;
 }
 .right-row{
-    padding-left: 25px;
+    padding-left: 10px;
 }
 .daily_container{
     display: flex;
@@ -102,6 +124,7 @@
     gap: 10px;
     max-width: 1000px;
     margin: 0 auto;
+    padding-bottom: 20px;
 }
 /*Grid Styling*/
 .grid_container{
@@ -109,8 +132,11 @@
     grid-template-areas: 
     'row1-1 row1-2 row1-3 row2-2'
     'row2-1 row2-1 row1-4 row2-2';
-    box-shadow: 2px 2px 8px #cecece;
-    border-radius: 5px;
+    box-shadow: 4px 4px 8px #00000054;
+    border-radius: 10px;
+    background-color: white;
+    box-sizing: border-box;
+    border: black 4px solid;
 }
 .row1-1{
     grid-area: row1-1;
@@ -138,8 +164,15 @@
 }
 .row2-2{
     grid-area: row2-2;
+    -ms-transform: translateY(5%);
+    transform: translateY(5%);
 }
 /*Grid responsive*/
+@media screen and (max-width: 370px){
+    #pkmImages{
+        padding-left: 35px;
+    }
+}
 @media screen and (min-width: 576px){
     .grid_container{
         grid-template-areas: 
@@ -148,11 +181,20 @@
     .row2-1{
         padding-left: 0;
     }
+    .row2-2{
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+}
+@media screen and (min-width: 753px){
+    .box1{
+        -ms-transform: translateY(20%);
+        transform: translateY(20%);
+    }
 }
 /*Footer*/
 .footer{
     background-color: rgb(20, 20, 44);
-    margin-top: 20px;
     color: white;
     & h3{
         margin: 0;

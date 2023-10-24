@@ -13,7 +13,7 @@
 
     <title>index</title>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./Api_Fetcher.js"></script>
     <!--<script src="./Api_Poketmon.js"></script>-->
 </head>
@@ -27,19 +27,19 @@
     </section>
     <div class="container-fluid" id="background">
         <section class="container-fluid p-0">
-            <hr class="mt-1">
-            <h1 class="location" id="location">
-                Enter city
-            </h1>
-            <a href="javascript:void(0)" class="arrow" onclick="CityInput()">
-                <i class="fa-solid fa-chevron-down"></i>
-            </a>
-            <br>
-            <input type="text" class="city" id="city">
-            <button class="city_BTN" id="city_BTN" onclick=" fetchWeather(), fetchForecast()">
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-            <br>
+            <div class="city-container">
+                <h1 class="location" id="location">
+                    Enter city
+                </h1>
+                <a href="javascript:void(0)" class="arrow" onclick="CityInput()">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+                <input type="text" class="city" id="city">
+                <button class="city_BTN" id="city_BTN" onclick=" fetchWeather(), fetchForecast()">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <br>
         </section>
         <div class="container-fluid p-0">
             <h2 class="separator">
@@ -51,18 +51,18 @@
         <section class="container-fluid p-0">
             <div class="flex_container">
                 <div class="box">
-                    <div class="d-inline" id="temperature">
-                        0°C
-                    </div>
-                    <div class="d-inline">
-                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" id="icon">
-                        <!-- PokeIMG -->
-                        <div class="d-inline">
-                            <img class="" id="pkmImages" src="" alt="Pokemon">
-                            <p id="pkmName"></p>
-                            <p id="pkmTypes"></p>
+                    <div class="box1">
+                        <div class="d-inline" id="temperature">
+                            0°C
                         </div>
+                        <div class="d-inline">
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Icon" id="icon">
+                            <!-- PokeIMG -->
+                            <div class="d-inline">
+                                <img class="" id="pkmImages" src="" alt="">
+                            </div>
                         
+                        </div>
                     </div>
                 </div>
                 <div class="box">
