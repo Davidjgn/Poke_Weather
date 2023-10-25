@@ -13,7 +13,8 @@
 
     <title>index</title>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="./Api_Fetcher.js"></script>
     <!--<script src="./Api_Poketmon.js"></script>-->
 </head>
@@ -28,25 +29,34 @@
     <div class="container-fluid" id="background">
         <section class="container-fluid p-0">
             <div class="city-container">
-                <h1 class="location" id="location">
+                <span class="location" id="location">
                     Enter city
-                </h1>
+                </span>
                 <a href="javascript:void(0)" class="arrow" onclick="CityInput()">
                     <i class="fa-solid fa-chevron-down"></i>
                 </a>
             </div>
+            <div class="n5d-cont">
                 <input type="text" class="city" id="city">
                 <button class="city_BTN" id="city_BTN" onclick=" fetchWeather(), fetchForecast()">
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
-                <br>
+            </div>
+            <br>
         </section>
+        
         <div class="container-fluid p-0">
-            <h2 class="separator">
-                <span>
-                    Current Conditions
-                </span>
-            </h2>
+            <div class="flex_container" id="flex-sep">
+                <div class="sep-box">
+                    <h2 class="separator">
+                        <span>
+                            Current Conditions
+                        </span>
+                    </h2>
+                </div>
+                <div class="sep-box">
+                </div>
+            </div>
         </div>
         <section class="container-fluid p-0">
             <div class="flex_container">
@@ -61,7 +71,7 @@
                             <div class="d-inline">
                                 <img class="" id="pkmImages" src="" alt="">
                             </div>
-                        
+
                         </div>
                     </div>
                 </div>
@@ -113,7 +123,7 @@
                                 <td id="wind">
                                     0 kph N
                                 </td>
-                                
+
                                 <td class="right-row">
                                     <strong>
                                         Weather
@@ -166,17 +176,19 @@
             </div>
         </section>
         <div class="container-fluid p-0">
-            <h2 class="separator">
-                <span>
-                    Next 5 Days
-                </span>
-            </h2>
+            <div class="n5d-cont">
+                <h2 class="separator">
+                    <span>
+                        Next 5 Days
+                    </span>
+                </h2>
+            </div>
         </div>
         <section class="container-fluid p-0">
             <div class="daily_container">
                 <div class="grid_container">
                     <div class="row1-1">
-                        <span id="day1">
+                        <span id="day1" class="day">
                             Mon
                         </span>
                         <br>
@@ -227,7 +239,7 @@
                 </div>
                 <div class="grid_container">
                     <div class="row1-1">
-                        <span id="day2">
+                        <span id="day2" class="day">
                             Tue
                         </span>
                         <br>
@@ -268,16 +280,16 @@
                         </span>
                     </div>
                     <div class="row2-1" id="desc2">
-                        
+
                     </div>
                     <div class="row2-2">
                         <img src="" alt="" id="pkmId2">
                     </div>
-                    
+
                 </div>
                 <div class="grid_container">
                     <div class="row1-1">
-                        <span id="day3">
+                        <span id="day3" class="day">
                             Wed
                         </span>
                         <br>
@@ -326,7 +338,7 @@
                 </div>
                 <div class="grid_container">
                     <div class="row1-1">
-                        <span id="day4">
+                        <span id="day4" class="day">
                             Thur
                         </span>
                         <br>
@@ -375,7 +387,7 @@
                 </div>
                 <div class="grid_container">
                     <div class="row1-1">
-                        <span id="day5">
+                        <span id="day5" class="day">
                             Fri
                         </span>
                         <br>

@@ -57,7 +57,7 @@ body {
     display: none;
     border-radius: 10px;
     border: 4px black solid;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 .city_BTN{
     display: none;
@@ -72,13 +72,13 @@ body {
 }
 .separator{
     font-size: 20px;
-    color: rgb(48, 48, 48);
+    color: rgb(0, 0, 0);
     position: relative;
     margin-bottom: 5px;
 }
 .separator > span{
     font-weight: bold;
-    background-color: white;
+    background-color: rgb(185, 201, 255);
     border-radius: 10px;
     padding: 5px 10px 15px 10px;
     box-sizing: border-box;
@@ -92,23 +92,22 @@ body {
   right: -120px;
   background-color: white;
 }
-.separator :after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 0.5em;
-  border-top: 1px solid rgb(223, 17, 17);
-  z-index: -1;
-}
 .flex_container {
   justify-content: center;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+#flex-sep{
+    margin-bottom: 0;
+    position: relative;
+    top: 10px;
+}
+.sep-box{
+    width: 351px;
+    background-color: #00000000;
 }
 .box{
     width: 351px;
@@ -138,6 +137,10 @@ body {
 .right-row{
     padding-left: 10px;
 }
+.n5d-cont{
+    max-width: 1000px;
+    margin: 0 auto;
+}
 .daily_container{
     display: flex;
     flex-direction: column;
@@ -158,6 +161,9 @@ body {
     box-sizing: border-box;
     border: black 4px solid;
     z-index: 1;
+}
+.day{
+    font-weight: bold;
 }
 .row1-1 {
   grid-area: row1-1;
@@ -215,11 +221,15 @@ body {
         -ms-transform: translateY(20%);
         transform: translateY(20%);
     }
+    #flex-sep{
+        top: 0px;
+    }
 }
 /*Footer*/
 .footer{
     background-color: rgb(20, 20, 44);
     color: white;
+    padding: 20px;
     & h3{
         margin: 0;
     }

@@ -78,6 +78,16 @@ function showpkmTypes(desc, imgId) {
 }
 
 // From here is Native JS
+window.addEventListener('DOMContentLoaded', function(){
+    var enterBtn = document.getElementById("city");
+    enterBtn.addEventListener("keypress", function(event){
+        if(event.key === "Enter"){
+            event.preventDefault();
+            document.getElementById("city_BTN").click();
+        }
+    });
+});
+
 
 //convert the unix time format to the yyyy/mm/dd hh:mm:ss format
 function unixConverter(unixTime) {
